@@ -13,7 +13,7 @@ This is an introductory workshop to Node.js and Express. You'll be building your
 
 ## Workshop Structure
 
-This workshop is divided into a number of steps. At the end of each segment, you should find a link to continue onto the next step. We suggest you follow along with the tutorial online, and write your code in a separate repository.
+This workshop is divided into a number of steps. We suggest you follow along with the tutorial online, and write your code in a separate repository.
 
 You will see code snippets throughout the walkthrough. Try to resist the urge to copy and paste - you will learn much more if you get into the habit of typing things out. If you want to test out small bits of code before adding them to your project, [repl.it](repl.it) is a useful tool.
 
