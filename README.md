@@ -53,7 +53,7 @@ $ npm init
 
 This command will initialise a step-by-step process for creating the `package.json`. You should see something like this:
 
-![starting npm init](https://raw.githubusercontent.com/node-girls/workshop-cms/master/readme-images/step1-npm-init01.png)
+![starting npm init](https://image.ibb.co/iFepNG/Screen_Shot_2017_12_29_at_13_51_37.png)
 
 It will ask you the following questions:
 
@@ -89,7 +89,7 @@ It will ask you the following questions:
 
 You will see a confirmation of your `package.json`. If you're happy with it, press `Enter` to finalise its creation.
 
-![package.json confirmation](https://raw.githubusercontent.com/node-girls/workshop-cms/master/readme-images/step1-npm-init02.png)
+![package.json confirmation](https://image.ibb.co/gswsbb/Screen_Shot_2017_12_29_at_13_54_59.png)
 
 Great! You should now see a new file called `package.json` in your project's folder.
 
@@ -124,7 +124,7 @@ A server is a computer program. Its job is to send and receive data.
 Let's take a website for example.  A website is just a collection of HTML and CSS files, images, maybe some javascript files. When you type a website address in your browser's address bar, the browser (client) sends a **request** to the server that lives at that address. The browser asks the server to give it the files it needs to display the website properly.
 
 
-![Server flow](https://files.gitter.im/heron2014/FiiK/server.png)
+![Server flow](https://image.ibb.co/dD0qUw/final.png)
 
 ## 1. Create a `server.js` file
 
@@ -283,7 +283,7 @@ app.get("/chocolate", function (req, res) {
 });
 ```
 
-*Challenge:* Add some code so that your server sends one message when the endpoint is `/node` and another one when it's `/girls`.
+*Challenge:* Add some code so that your server sends one message when the endpoint is `/node` and another one when it's `/meli`.
 
 # Step 6 - Serving static files
 
@@ -613,3 +613,8 @@ If all goes well, you should have a fully functional CMS!
 * [What is Node?](https://github.com/node-girls/what-is-node)
 * [Node cheatsheet](https://github.com/node-girls/cheatsheets/blob/master/node-cheatsheet.md)
 * [Command line cheatsheet](https://github.com/node-girls/cheatsheets/blob/master/command-line-cheatsheet.md)
+
+### Credits
+ * Aldo Sorbara (aldo.sorbara@mercadolibre.com)
+ * Sebastian Gonzalez (sebastian.sgonzalez@mercadolibre.com)
+ * Matias Dastugue (matias.dastugue@mercadolibre.com)
