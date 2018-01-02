@@ -301,7 +301,7 @@ app.use(express.static("public"));
 
 ## 1. Serve static files from your server
 
-Delete all your `app.get` endpoint functions, and replace them with the line of code above. Restart your server, refresh your browser and see what happens! If you see a Node Girls CMS, then your static assets have been successfully served.
+Delete all your `app.get` endpoint functions, and replace them with the line of code above. Restart your server, refresh your browser and see what happens! If you see a Node Meli CMS, then your static assets have been successfully served.
 
 # Step 7 - Sending your blog post to your server
 
