@@ -124,7 +124,7 @@ A server is a computer program. Its job is to send and receive data.
 Let's take a website for example.  A website is just a collection of HTML and CSS files, images, maybe some javascript files. When you type a website address in your browser's address bar, the browser (client) sends a **request** to the server that lives at that address. The browser asks the server to give it the files it needs to display the website properly.
 
 
-![Server flow](https://image.ibb.co/dD0qUw/final.png)
+![Server flow](https://image.ibb.co/moiSCG/meli.png)
 
 ## 1. Create a `server.js` file
 
