@@ -19,8 +19,9 @@ app.post('/create-post', (req, res, next) => {
     next();
 }, (req, res, next) => {
     console.log('llego al siguiente con este body:', req.body);
-    posts.push(req.body);
-    res.send({ message: 'post creado exitosamente', desc: req.body.desc, title: req.body.title });
+    const newPost = Object.assign(req.body, {id: posts.length + 1, date: new Date() });
+    posts.push(newPost);
+    res.send(`Post creado exitosamente ${JSON.stringify(newPost)}`);
 })
 
 app.listen(3000, function () {
