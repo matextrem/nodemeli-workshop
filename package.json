@@ -1,0 +1,23 @@
+{
+  "name": "nodemeli-workshop",
+  "version": "1.0.0",
+  "description": "<img src=\"https://blog.keycdn.com/blog/wp-content/uploads/2017/10/nodejs-banner.png\">",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matextrem/nodemeli-workshop.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/matextrem/nodemeli-workshop/issues"
+  },
+  "homepage": "https://github.com/matextrem/nodemeli-workshop#readme",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}
