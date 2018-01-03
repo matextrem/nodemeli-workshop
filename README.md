@@ -319,37 +319,9 @@ When sending data to the server, we use the `POST` http request method, instead 
 
 Let's try `POST`ing some text to the server.
 
-We're going to add a form to the `index.html` page, so that you can write your blogposts from there.
-
-Open up the `index.html` file in your text editor.  If you have a look, you should see this:
-
-```html
-<div class="entry-container">
-    <!--PASTE YOUR CODE HERE!! -->
-</div>
-```
-
-**Replace the greyed-out comment with this code snippet:**
-
-```html
-<h3>Create a blog post</h3>
-<form action="/create-post" method="POST">
-    <textarea name="blogpost" rows="10" cols="14"></textarea>
-    <button type="submit">Send</button>
-</form>
-```
-
-* This form has a text area and a Send button.  
-* The `action` attribute is the endpoint form data will be sent to.
-* The `name` attribute will be used later to reference the data.
-
 When you hit Send, the form will send a `POST` request to the server, using whatever is in the `action` attribute as the endpoint.  In our case it's `/create-post`.
 
 ### Receiving the blog post on the server
-
-* Data doesn't come through the server in one go; it flows to the server in a **stream**.  Think of a stream as water flowing from a tap into a bucket.  Your job is to collect this water in the server.
-
-* If we were writing a pure Node server, we would have to think about how to collect the stream of data properly.  But luckily for us, Express handles all of that stuff under the hood.  
 
 * All you need to do is define a route to deal with requests that come through on the `/create-post` endpoint.
 
@@ -370,34 +342,7 @@ For now, make your `/create-post` handler simply do this: `console.log('/create-
 
 Now the contents of your blogpost is hidden in your `req` object somewhere.  Normally you would extract it using `req.body`.  Try to console.log `req.body` now.
 
-Getting `undefined`?  Not to worry, that's normal.  When data has been `POST`ed to the server as `FormData`, we need to do things slightly differently to access the data that's come through in the request.
-
-We need another middleware function.  Something that can get extract the contents out of the special `FormData` object.  For this we will use `express-formidable`.  `express-formidable` is another Express middleware. It will extract the form data from the request and make it available to you when you do `req.fields`.
-
-This time though, `express-formidable` is not built-in, we need to explicitly install it.
-
-**In your terminal, install express-formidable**
-```bash
-npm install express-formidable --save
-```
-
-`require` `express-formidable` so you can use it in your code.  You can't use dashes in JavaScript variable names, so just call it `var formidable`.
-```js
-var formidable = require('express-formidable');
-```
-
-Now add this towards the top of your server, after your `require`s and `app.use(express.static('public'))`, but before your `/create-post` endpoint:
-```js
-app.use(formidable());
-
-```
-Now inside your `/create-post` function, add:
-```js
-console.log(req.fields);
-```
-Refresh your server and have another go at writing a blogpost.
-
-You should now see an object in the console.  The key should be `blogpost`, just like the name attribute in the form on the HTML page.  The value of `blogpost` will be your message!
+You should now see an object in the console.  The keys should be `title` and `desc`, just like the name attribute in the form on the HTML page.
 
 # Step 8 - Saving your blog post
 
@@ -523,26 +468,6 @@ Here's a breakdown of what you want to achieve:
 Oh by the way, if you want to get the current timestamp, use the JavaScript `Date.now()` method.
 
 Good luck!
-
-# Step 9 - Displaying your blog posts
-
-Great work!  Wipe off those beads of sweat - it's the final mini-challenge.  You can do it! 💥
-
----
-
-So now we're saving the blog posts to the server.  Time to get them and display them on the page!
-
-If you look inside `public/script.js`, there's a whole bunch of JavaScript code in there.  Don't worry about what all the code means, just know that it's responsible for sending a request to GET old blog posts and display them on the page underneath "Recent Posts".
-
-`script.js` is trying to load existing posts by making a GET request. Look inside `script.js` and see if you can find any useful endpoints.
-
-
-Your `script.js` file will want to receive the JSON containing your blog posts.  Your job is to make that happen!
-
-Express has a handy method called `res.sendFile()` that makes it easy to send files back to the client.  Feel free to use this with your JSON.
-
-
-If all goes well, you should have a fully functional CMS!
 
 ## Congratulations!! :dog:
 
