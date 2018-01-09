@@ -3,7 +3,10 @@ const app = express();
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const utils = require('./utils');
-const posts = [];
+const posts = [
+    { id: 1, date: new Date(), desc: 'post test1', author: 'author1', title: 'test'},
+    { id: 2, date: new Date(), desc: 'post test2', author: 'author2', title: 'test2'}
+];
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -11,7 +14,7 @@ app.use(cookieParser());
 app.use(express.static("public"));
 app.use(utils.setHeaders);
 
-app.get('/', (req, res, next) => {
+app.get('/posts', (req, res, next) => {
     res.send({ recentPosts: posts });
 })
 
