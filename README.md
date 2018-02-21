@@ -324,7 +324,7 @@ Let's try `POST`ing some text to the server.
 
 When you hit Send, the form will send a `POST` request to the server, using whatever is in the `action` attribute as the endpoint.  In our case it's `/posts`.
 
-### Receiving the blog post on the server
+### Getting all the posts from the server
 
 * All you need to do is define a route to deal with requests that come through on the `/posts` endpoint.
 
@@ -334,14 +334,18 @@ app.get('/my-lovely-endpoint', function (req, res) {
     res.send('Hello there!');
 });
 ```
+And now, we want to do a `GET` method in order to fetch the data from any kind of data storage and send it as a response: 
+```js
+app.get('/posts', (req, res, next) => {
+    res.send({ recentPosts: posts });
+});
+```
+
+### Saving a blog post
 
 This time we want to define a route to deal with a `POST` request.  What do you think you would need to do differently?  Experiment and see if you can define a route for the `/posts` endpoint!
 
 For now, make your `/posts` handler simply do this: `console.log('/posts'); res.send("sending posts");`.
-
----
-
-### Extracting the blog post
 
 Now the contents of your blogpost is hidden in your `req` object somewhere.  Normally you would extract it using `req.body`.  Try to console.log `req.body` now.
 
@@ -349,7 +353,7 @@ You should now see an object in the console.  The keys should be `title` and `de
 
 # Step 8 - Saving your blog post
 
-📣 Ok, so now it's time for a mini challenge.  Steps 8 and 9 will require a little bit of your problem-solving skills.  But don't worry, these mini challenges are 100% doable with the things you've learnt so far!
+📣 Ok, so now it's time for a mini challenge.  Making a put and a delete method will require a little bit of your problem-solving skills.  But don't worry, these mini challenges are 100% doable with the things you've learnt so far!
 
 As always, chat with a mentor or collaborate with your neighbour if you need to.
 
